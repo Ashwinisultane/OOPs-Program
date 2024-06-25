@@ -1,0 +1,33 @@
+class Bird {
+    void fly() {
+        System.out.println("Bird can fly");
+    }
+}
+
+class Sparrow extends Bird {
+    @Override
+    void fly() {
+        System.out.println("Sparrow can fly");
+    }
+}
+
+class Ostrich extends Bird {
+    @Override
+    void fly() {
+        System.out.println("Ostrich cannot fly");
+    }
+}
+
+public class Main {
+    public static void letFly(Bird bird) {
+        bird.fly();
+    }
+
+    public static void main(String[] args) {
+        Sparrow sparrow = new Sparrow();
+        Ostrich ostrich = new Ostrich();
+
+        letFly(sparrow);  // Output: Sparrow can fly
+        letFly(ostrich);  // Output: Ostrich cannot fly
+    }
+}
